@@ -1,0 +1,301 @@
+/**general styling**/
+/*body*/
+body{
+    margin: 0%;/*ensures display to edge of browser window*/
+}
+
+/*heading 1 elements*/
+h1{
+    text-transform: uppercase;/*capitalization*/
+    font-family: Trebuchet MS, Optima;/*sets font family*/
+    text-align: center;/*centers elements*/
+    margin-top: 3%;/*adds small margine above elements*/
+    color: #F79824;
+}
+
+/*heading 1 elements - hover*/
+h1:hover{
+    filter: grayscale(5%);/*adds slight gray filter on hover*/
+    transform: scale(1.1);/*slight increase in size on hover*/
+    transition: transform 1s;/*causes transform to last 1 sec*/
+}
+
+/*title text styling*/
+.white_text{
+    color: #F79824;/*title text color*/
+}
+
+/*paragraph elements*/
+p{
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;/*justify text within elements*/
+    letter-spacing: 1px;/*expands text slightly*/
+    font-size: 20px;
+    padding-left: 20px;/*adds padding to left of elements*/
+    padding-right: 20px;/*adds padding to right of elements*/
+    color: #33A1FD;
+}
+
+/*paragraph element - hover*/
+p:hover{
+    transition: transform 1s;/*transform effect lasts 1 sec*/
+    transform: scale(1.01);/*increase element size slightly on hover*/
+}
+
+/*center class*/
+.center{
+    text-align: center;/*center aligns text*/
+}
+
+/*center class - hover*/
+.center:hover{
+    transition: transform 2s;/*transform effect lasts 2 secs*/
+    transform: scale(1.1);/*increase element size slightly on hover*/
+}
+
+/*anchor elements*/
+a{
+    color: #FDCA40;/*all links are blue*/
+}
+
+/*quotation elements*/
+q{
+    font-style: italic;/*quotes are italicized*/
+}
+
+/*image elements*/
+img{
+    filter: grayscale(75%);/*removes 75% color from images*/
+    border-radius: 8px;/*images have slightly rounded corners*/
+    max-width: 100%;/*images cant extend beyond width of their container*/
+    height: 340px;/*sets height of images*/
+    display: block;/*required to center images*/
+    margin-left: auto;/*combined with 'margin-right: auto' will center all images*/
+    margin-right: auto;
+}
+
+/*image elements - hover*/
+img:hover{
+    filter: grayscale(5%);/*brings back most of an images color on hover*/
+    transition: transform 1s;/*transform lasts 1 sec*/
+    transform: scale(1.1);/*increase image size slightly on hover*/
+}
+
+/*@media - used in media queries to apply different styles for different types of devices/*
+/*On screens 576px and smaller, images will be 100px tall and centered vertically in the column*/
+@media screen and (max-width: 576px){
+    img{
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/*footer element*/
+footer{
+    padding: 2%;/*adds footer padding equal to 2% of element's width*/
+    background-color: rgba(255,255,255,0.2)
+}
+
+/**end general styling**/
+
+/**navbar styling**/
+.navbar{
+    overflow: hidden;/*hides anything that excedes the boundary of elemnt area*/
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;/*keeps navbar at top of screen while scrolling*/
+    top: 0;/*no space above navbar*/
+    width: 100%;/*navbar spans entire width of page*/
+    z-index: 1;/*navbar displays over top of all other elements*/
+    -webkit-animation: moveNav 2s;/*enables moveNav animation on Safari 4.0 - 8.0*/
+    animation: moveNav 2s;/*applies moveNav animation for all other browsers*/
+}
+
+/*moveNav animation effect for moving the navbar in from the left of the screen*/
+@keyframes moveNav{
+    from{left: -100vw;}/*starts the navbar off the screen on left*/
+    to{left: 0vw;}/*moves navbar into place on screen*/
+}
+
+/*navbar links*/
+.navbar a{
+    float: left;/*text floats to the left on the navbar*/
+    display: block;/*ensures that other text will be displayed on the same line or row instead of a new line*/
+    color: #2176FF;/*navbar text color*/
+    padding: 14px 16px;/*adds padding around text*/
+    text-decoration: none;/*removes text underline*/
+    font-family: avant garde, helvetica;
+    font-size: 20px;
+    text-align: center;/*centers text within it's container*/
+    position: relative;/*sets text relative to it's normal positioning, allowing animation*/
+    -webkit-animation: moveNavText 2s;/*animation for Safari 4.0-8.0*/
+    animation: moveNavText 2s;/*applies moveNavText animation for 2s*/
+}
+
+/*moveNavText animation effect for moving navbar text from above view to the navbar*/
+@keyframes moveNavText{
+    from{top: -100vw;}/*sets navbar text 100% above the viewport*/
+    to{top: 0vw;}/*lowers navbar text onto the navbar*/
+}
+
+/*screens 576px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 576px){
+    .navbar a{
+        width: 25%;/*makes each link take up 1/4 of the navbar*/
+        font-size: 12px;
+    }
+}
+
+/*navbar elemnet- hover*/
+.navbar a:hover{
+    background-color: #2176FF;/*hover background color*/
+    color: black;/*hover font color*/
+    font-weight: bold;/*hover font bold*/
+}
+
+/*navbar home button*/ 
+/*decided i didnt want this*/
+.navbar a.active{/*targets the 'a' element on the navbar with the 'active' class*/
+    /*background-color: #2176FF;*/
+}
+
+/**end navbar styling**/
+
+/**video styling**/
+/*background video formatting*/
+#background_vid{
+    position: fixed;/*fixes video to page*/
+    right: 0;/*ensures no space between edge of video and edge of page*/
+    bottom: 0;/*ensures no space between bottom of video and bottom of page*/
+    min-width: 100%;/*ensures video is displayed across full width of the page*/
+    z-index: -1;/*places video behind everything else*/
+}
+
+/*screens that are 576px and smaller will not display background video*/
+@media screen and (max-width: 576px){
+    #background_vid{
+        display: none;
+    }
+}
+
+/*text over video*/
+.video_text{
+    background: rgba(0,0,0,0.5);/*adds semi-transparent background for text to sit over*/
+    top: 15px;/*prevents navbar overlap on page load*/
+    color: #33A1FD;
+    width: 100%;/*ensures video-text container fills width of video*/
+    padding: 40px;/*adds padding around video-text container so background goes slightly beyond the text*/
+    position: relative;/*sets text relative to it's normal positioning, allows use of animation*/
+    -webkit-animation: moveVideoText 2s;/*animation for Safari 4.0-8.0*/
+    animation: moveVideoText 2s;/*applies moveVideoText animation for 2s*/
+}
+
+/*animation effect causes the overlay video text to move up from the bottom of the page upon page load*/
+@keyframes moveVideoText{
+    from{top: -100vw;}/*sets position of vid text to above the above viewport*/
+    to{top: 0vw;}/*moves vid text to normal position*/
+}
+
+/**end video styling**/
+
+/**table styling - styling of columns and rows in table**/
+*{/*asterisk is universal selector that applies to all elements on page*/
+    box-sizing: border-box;/*creates box with border within which we will place most of text*/
+}
+
+.column_1{
+    float: left;
+    width: 50%;/*ensures column takes up half of page width*/
+    padding: 20px;
+    padding-top: 3%;/*ensures no space between top of column and heading*/
+    height: 500px;/*sets height of column to 400px - may need to be adjusted*/
+    background-color: rgba(255,255,255,0.2);/*sets background color of column_1 class*/
+}
+
+/*screens 576px and smaller will display a scroll bar if the text overflows the column height*/
+@media screen and (max-width: 576px){
+    .column_1{
+        overflow:auto;
+    }
+}
+
+/**row - about**/
+#about{
+    padding-top: 15px;/*removes overlap with 'white_text' element*/
+}
+
+.column_2{
+    float: left;
+    width: 50%;
+    padding: 20px;
+    padding-top: 3%;
+    height: 500px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/*this class applies to the columns in the final row, overriding height and padding to provide room for the contact form while keeping rest of the formatting from col1 and col2*/
+.column_tall{
+    /*padding-top: 3.5%;*/
+    height: 450px;
+}
+
+/*insert something after content of selected elements*/
+.row:after{
+    content: "";/*by leaving this blank, we are allowing the footer to be displayed. removing it makes the footer overwrite a column*/
+    display: table;/*display property specifies type of display behavior; table value tells browser to treat element as table*/
+    clear: both;/*clears any other elements from floating on left or right of element*/
+}
+
+/**end table styling**/
+
+/**contact form styling**/
+/*input[type=text] targets all text input sections of the contact form*/
+input[type=text]{
+    width: 100%;/*each input box covers full width of container*/
+    padding: 12px;/*adds padding within text box*/
+    border: 1px solid #ccc;/*setting a solid border and it's color*/
+    border-radius: 4px;/*slightly rounds corners of text box border*/
+    box-sizing: border-box;/*creates box with border around contact form input boxes*/
+    margin-top: 6px;/*adds margin to top of text box*/
+    margin-bottom: 16px;/*adds margin to bottom of text box*/
+    resize: vertical;/*allows user to resize text boxes vertically*/
+    font-family: perpetua, rockwell extra bold;
+}
+
+/*input boxes - hover*/
+input[type=text]:hover{
+    box-shadow: 0 0 5px #00004d inset;/*creates blue shadow in text box when hovered by user*/
+}
+
+/*submit button*/
+input[type=submit]{
+    background-color: black;/*black background color to submit button*/
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;/*removes border from submit button*/
+    border-radius: 4px;
+    cursor: pointer;/*changes cursor to pointer when over the submit button*/
+    display: block;/*allows button to be centered*/
+    margin-left: auto;/*combined with 'margin-right' will center the button*/
+    margin-right: auto;
+    font-family: perpetua, rockwell extra bold;
+}
+
+/*submit button - hover*/
+input[type=submit]:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.5);
+    transition: transform 1.5s;
+}
+
+/*form element*/
+form{
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.2);
+    padding: 10px;
+    font-family: "trebuchet ms", optima;
+    color: black;
+}
+
+/**end contact form styling**/
