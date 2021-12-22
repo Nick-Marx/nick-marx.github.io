@@ -46,4 +46,4 @@ document.addEventListener("click", function(event){
     if(event.target.matches(".cancel")|| !event.target.closest(".form-popup")&& !event.target.closest(".pop_up_button")&& !event.target.closest(".contact")){
         closeForm()
     }
-}, false)
+}, false) 
