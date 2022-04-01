@@ -15,7 +15,7 @@ body{
 h1{
     text-transform: uppercase;/*capitalization*/
     font-family: Trebuchet MS, Optima;/*sets font family*/
-    font-size: 3vw;
+    font-size: 2vw;
     text-align: center;/*centers elements*/
     margin-top: 3%;/*adds small margine above elements*/
     color: #F79824;
@@ -62,7 +62,7 @@ a{
 /*quotation elements*/
 q{
     font-style: italic;/*quotes are italicized*/
-    font-size: 2.5vw;
+    font-size: 2.3vw;
 }
 /*image elements*/
 img{
