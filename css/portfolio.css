@@ -35,16 +35,20 @@ p{
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: justify;/*justify text within elements*/
     letter-spacing: .1px;/*expands text slightly*/
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     padding-left: 1vw;/*adds padding to left of elements*/
     padding-right: 1vw;/*adds padding to right of elements*/
     color: #33A1FD;
 }
 /*paragraph element - hover*/
-p:hover{
-    transition: transform 1s;/*transform effect lasts 1 sec*/
-    transform: scale(1.01);/*increase element size slightly on hover*/
-}
+/*removed this cause it was interfering with readability*/
+/*
+p:hover{*/
+    /*transition: transform 1s;*//*transform effect lasts 1 sec*/
+    /*transform: scale(1.01);*//*increase element size slightly on hover*/
+/*}
+*/
+
 /*center class*/
 .center{
     text-align: center;/*center aligns text*/
